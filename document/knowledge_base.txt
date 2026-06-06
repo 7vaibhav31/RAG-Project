@@ -1,0 +1,214 @@
+================================================================
+KNOWLEDGE BASE: Machine Learning — Complete Reference Guide
+================================================================
+
+SECTION 1: WHAT IS MACHINE LEARNING?
+---------------------------------------
+Machine Learning (ML) is a branch of artificial intelligence (AI) 
+that gives systems the ability to automatically learn and improve 
+from experience without being explicitly programmed. ML focuses 
+on developing computer programs that can access data and use it 
+to learn for themselves.
+
+The term "Machine Learning" was coined by Arthur Samuel in 1959.
+Tom Mitchell later gave a formal definition: "A computer program 
+is said to learn from experience E with respect to some class of 
+tasks T and performance measure P, if its performance at tasks in 
+T, as measured by P, improves with experience E."
+
+
+SECTION 2: TYPES OF MACHINE LEARNING
+---------------------------------------
+2.1 Supervised Learning
+In supervised learning, the algorithm is trained on labeled data —
+meaning each training example has an input and a correct output.
+The model learns to map inputs to outputs.
+Examples: Linear Regression, Logistic Regression, Decision Trees,
+Support Vector Machines (SVM), Random Forests, Neural Networks.
+Use cases: Email spam detection, image classification, price prediction.
+
+2.2 Unsupervised Learning
+In unsupervised learning, the algorithm works with unlabeled data.
+It tries to find hidden patterns or groupings in the data.
+Examples: K-Means Clustering, DBSCAN, Principal Component Analysis (PCA),
+Autoencoders.
+Use cases: Customer segmentation, anomaly detection, dimensionality reduction.
+
+2.3 Reinforcement Learning
+An agent learns by interacting with an environment. It receives rewards 
+for correct actions and penalties for wrong ones. The goal is to maximize 
+cumulative reward over time.
+Examples: Q-Learning, Deep Q-Networks (DQN), PPO, A3C.
+Use cases: Game playing (AlphaGo), robotics, self-driving cars.
+
+2.4 Semi-supervised Learning
+A mix of supervised and unsupervised — small amount of labeled data 
+combined with large amount of unlabeled data.
+Use cases: Web content classification, medical image analysis.
+
+
+SECTION 3: KEY ALGORITHMS
+---------------------------------------
+3.1 Linear Regression
+Predicts a continuous output variable based on one or more input features.
+It fits a straight line (y = mx + b) to the data by minimizing the 
+Mean Squared Error (MSE) using gradient descent or the normal equation.
+
+3.2 Logistic Regression
+Used for binary classification. Outputs a probability between 0 and 1 
+using the sigmoid function. Decision boundary is set at 0.5.
+Despite the name, it is a classification algorithm, not regression.
+
+3.3 Decision Trees
+A tree-like model that splits data based on feature values.
+Splits are chosen to maximize Information Gain or minimize Gini Impurity.
+Prone to overfitting but easy to interpret.
+
+3.4 Random Forest
+An ensemble of decision trees. Each tree is trained on a random 
+subset of data (bagging). Final prediction = majority vote (classification)
+or average (regression). Reduces overfitting compared to a single tree.
+
+3.5 Support Vector Machine (SVM)
+Finds the hyperplane that best separates two classes with maximum margin.
+Kernel trick allows SVM to handle non-linearly separable data.
+Common kernels: Linear, RBF (Radial Basis Function), Polynomial.
+
+3.6 K-Nearest Neighbors (KNN)
+Classifies a data point based on the majority class of its K nearest 
+neighbors in feature space. Distance is measured using Euclidean distance.
+No training phase — it is a lazy learner.
+
+3.7 K-Means Clustering
+Unsupervised algorithm that partitions data into K clusters.
+Steps: Initialize K centroids → assign each point to nearest centroid →
+update centroids → repeat until convergence.
+
+
+SECTION 4: NEURAL NETWORKS AND DEEP LEARNING
+-----------------------------------------------
+A neural network consists of:
+- Input Layer: Receives raw features
+- Hidden Layers: Learn complex representations
+- Output Layer: Produces final prediction
+- Activation Functions: ReLU, Sigmoid, Tanh, Softmax
+
+Backpropagation is used to compute gradients of the loss function
+with respect to weights, using the chain rule of calculus.
+Weights are updated using gradient descent: w = w - lr * gradient
+
+Deep Learning refers to neural networks with many hidden layers.
+Common architectures:
+- CNN (Convolutional Neural Network): Image processing
+- RNN (Recurrent Neural Network): Sequential/time-series data
+- LSTM (Long Short-Term Memory): Addresses vanishing gradient in RNN
+- Transformer: Attention-based, used in NLP (BERT, GPT)
+
+
+SECTION 5: OVERFITTING, UNDERFITTING, AND REGULARIZATION
+----------------------------------------------------------
+Overfitting: Model performs well on training data but poorly on new data.
+It memorizes noise instead of learning patterns.
+Solutions: More data, Dropout, L1/L2 Regularization, Early Stopping,
+Cross-validation.
+
+Underfitting: Model is too simple to capture underlying patterns.
+It performs poorly on both training and test data.
+Solutions: More complex model, more features, reduce regularization.
+
+Bias-Variance Tradeoff:
+- High Bias → Underfitting (model too simple)
+- High Variance → Overfitting (model too complex)
+- Goal: Find the sweet spot with low bias AND low variance.
+
+L1 Regularization (Lasso): Adds absolute value of weights to loss.
+Produces sparse models — drives some weights to exactly zero.
+
+L2 Regularization (Ridge): Adds squared value of weights to loss.
+Distributes weight reduction across all features.
+
+
+SECTION 6: EVALUATION METRICS
+---------------------------------------
+For Classification:
+- Accuracy = (TP + TN) / Total
+- Precision = TP / (TP + FP)  [How many predicted positives are correct?]
+- Recall = TP / (TP + FN)     [How many actual positives were caught?]
+- F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
+- ROC-AUC: Area under the Receiver Operating Characteristic curve.
+  AUC = 1.0 is perfect, AUC = 0.5 is random guessing.
+
+For Regression:
+- MSE (Mean Squared Error): Average of squared differences.
+- RMSE (Root MSE): Square root of MSE, same unit as target.
+- MAE (Mean Absolute Error): Average of absolute differences.
+- R-squared: Proportion of variance explained by the model.
+  R² = 1 is perfect fit, R² = 0 means model is as good as predicting mean.
+
+
+SECTION 7: DATA PREPROCESSING
+---------------------------------------
+Feature Scaling:
+- Min-Max Normalization: Scales to [0,1]. Sensitive to outliers.
+- Standardization (Z-score): Mean=0, Std=1. Better for most algorithms.
+
+Handling Missing Values:
+- Remove rows/columns with too many missing values.
+- Impute with mean, median, or mode.
+- Use KNN Imputer or model-based imputation.
+
+Encoding Categorical Variables:
+- Label Encoding: Assigns integer to each category.
+- One-Hot Encoding: Creates binary columns for each category.
+- Target Encoding: Replace category with mean of target variable.
+
+Train-Test Split:
+Data is split into training (70-80%) and testing (20-30%) sets.
+K-Fold Cross Validation divides data into K parts; each part is used
+as test set once while the rest train the model.
+
+
+SECTION 8: FEATURE ENGINEERING AND SELECTION
+----------------------------------------------
+Feature Engineering: Creating new meaningful features from raw data.
+Examples: Extracting day/month from date, combining two features,
+polynomial features, log transformation of skewed data.
+
+Feature Selection Methods:
+- Filter Methods: Correlation, Chi-square test, mutual information.
+- Wrapper Methods: Recursive Feature Elimination (RFE).
+- Embedded Methods: Lasso (L1) regularization, feature importance
+  from Random Forest or Gradient Boosting.
+
+
+SECTION 9: MODEL TRAINING PIPELINE
+---------------------------------------
+A standard ML pipeline consists of:
+Step 1: Data Collection and Cleaning
+Step 2: Exploratory Data Analysis (EDA)
+Step 3: Feature Engineering and Preprocessing
+Step 4: Train-Test Split
+Step 5: Model Selection and Training
+Step 6: Hyperparameter Tuning (GridSearchCV, RandomizedSearchCV, Optuna)
+Step 7: Model Evaluation on Test Set
+Step 8: Model Deployment (Flask, FastAPI, Streamlit)
+
+
+SECTION 10: COMMON INTERVIEW QUESTIONS IN ML
+----------------------------------------------
+Q: What is the curse of dimensionality?
+A: As dimensions increase, data becomes sparse, making distance-based 
+algorithms less effective. PCA or feature selection is used to combat this.
+
+Q: What is gradient descent?
+A: An optimization algorithm that iteratively moves in the direction of 
+steepest descent of the loss function to find minimum weights.
+
+Q: What is cross-entropy loss?
+A: A loss function for classification. Measures difference between 
+predicted probability distribution and true distribution.
+Formula: -sum(y * log(y_hat))
+
+================================================================
+END OF DOCUMENT
+================================================================
