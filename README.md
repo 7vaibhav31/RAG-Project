@@ -24,7 +24,8 @@ Intern_Project/
 │   └── knowledge_base.txt      # Machine Learning reference guide
 │
 ├── output/                     ← Q&A test results (screenshots)
-│   └── README.md               # Screenshots of 5 Q&A pairs go here
+│   ├── output_log.md           # Markdown file with embedded screenshots
+│   └── *.jpg                   # 5 Q&A test result screenshots
 │
 ├── notes/                      ← Project notes
 │   └── out_of_scope_note.md    # How out-of-scope questions are handled
