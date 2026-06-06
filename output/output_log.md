@@ -20,7 +20,7 @@ These questions have answers inside the knowledge base. The chatbot should answe
 
 ---
 
-### Q2 — What are the evaluation metrics used for classification problems?
+### Q2 — What is the curse of dimensionality?
 
 ![Q2 Screenshot](./2.jpg)
 
@@ -55,7 +55,7 @@ These questions have NO answers in the knowledge base. The chatbot should refuse
 | # | Question | Type | Expected Behavior |
 |---|----------|------|-------------------|
 | 1 | What is the difference between L1 and L2 regularization? | ✅ In-Document | Answered from doc |
-| 2 | What are the evaluation metrics for classification? | ✅ In-Document | Answered from doc |
+| 2 | What is the curse of dimensionality? | ✅ In-Document | Answered from doc |
 | 3 | Who coined the term 'Machine Learning' and in what year? | ✅ In-Document | Answered from doc |
 | 4 | Who is the current CEO of Google? | 🚫 Out-of-Scope | Refused to answer |
 | 5 | What are the ingredients to bake a chocolate cake? | 🚫 Out-of-Scope | Refused to answer |
